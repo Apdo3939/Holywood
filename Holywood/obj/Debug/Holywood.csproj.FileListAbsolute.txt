@@ -1,0 +1,7 @@
+C:\Users\Alexandre\Desktop\Nelio C#\Holywood\Holywood\bin\Debug\Holywood.exe.config
+C:\Users\Alexandre\Desktop\Nelio C#\Holywood\Holywood\bin\Debug\Holywood.exe
+C:\Users\Alexandre\Desktop\Nelio C#\Holywood\Holywood\bin\Debug\Holywood.pdb
+C:\Users\Alexandre\Desktop\Nelio C#\Holywood\Holywood\obj\Debug\Holywood.csprojResolveAssemblyReference.cache
+C:\Users\Alexandre\Desktop\Nelio C#\Holywood\Holywood\obj\Debug\Holywood.csproj.CoreCompileInputs.cache
+C:\Users\Alexandre\Desktop\Nelio C#\Holywood\Holywood\obj\Debug\Holywood.exe
+C:\Users\Alexandre\Desktop\Nelio C#\Holywood\Holywood\obj\Debug\Holywood.pdb
