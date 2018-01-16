@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dominio\Artista.cs" />
+    <Compile Include="dominio\Filme.cs" />
+    <Compile Include="Tela.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

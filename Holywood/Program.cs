@@ -7,6 +7,7 @@ namespace Holywood
     class Program
     {
         static List<Artista> artista = new List<Artista>();
+        static List<Filme> filmes = new List<Filme>();
 
         static void Main(string[] args)
         {
@@ -25,15 +26,46 @@ namespace Holywood
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine("\t--------------------------------------------------------------");
+                Console.WriteLine("\t------------------- Artistas de Holywood ---------------------");
+                Console.WriteLine("\t--------------------------------------------------------------");
                 Console.WriteLine();
+
+                Tela.Menu();
+                Console.WriteLine();
+
                 Console.Write("\tPor favor Digite uma opção acima: ");
                 opcao = int.Parse(Console.ReadLine());
-                
-                for (int i = 0; i < artista.Count; i++)
-                {
-                    Console.WriteLine("\t" + artista[i]);
-                }
 
+                switch (opcao)
+                {
+                    case 1:
+                        Console.WriteLine();
+                        Console.WriteLine("\tLISTAGEM DE ARTISTAS:");
+                        for (int i = 0; i < artista.Count; i++)
+                        {
+                            Console.WriteLine("\t" + artista[i]);
+                        }
+                        break;
+
+                    case 2:
+                        Console.WriteLine();
+                        Tela.CadastrarArtistas();
+                        //parado aqui, tentando solucionar a questão list para cadastro de artista
+                        
+                        break;
+
+                    case 3:
+                        break;
+
+                    case 4:
+                        break;
+
+                    case 5:
+                        break;
+
+                    default:
+                        break;
+                }
                 Console.ReadLine();
             }
         }
