@@ -15,6 +15,16 @@ namespace Holywood
             Console.WriteLine("\t5 – Sair");
         }
 
+        public static void ListarArtitas()
+        {
+            Console.WriteLine("\tLISTAGEM DE ARTISTAS:");
+
+            for (int i = 0; i < Program.artista.Count; i++)
+            {
+                Console.WriteLine("\t" + Program.artista[i]);
+            }
+        }
+
         public static void CadastrarArtistas()
         {
             Console.WriteLine("\tDigite os dados do artista: ");
@@ -25,7 +35,8 @@ namespace Holywood
             Console.Write("\tValor do cachê: ");
             double cache = double.Parse(Console.ReadLine());
             Artista art = new Artista(codigo, nome, cache);
-            
+            Program.artista.Add(art);
         }
+                
     }
 }

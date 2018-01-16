@@ -23,7 +23,7 @@ namespace Holywood.dominio
             return  codigo
                 + ", \t"
                 + nome
-                + ", \t\tCachê: "
+                + ", Cachê: "
                 + cache.ToString("F2", CultureInfo.InvariantCulture); 
         }
 
