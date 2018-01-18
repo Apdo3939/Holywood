@@ -1,8 +1,5 @@
-﻿using System;
+﻿using System.Globalization;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Holywood.dominio
 {
@@ -12,6 +9,7 @@ namespace Holywood.dominio
         public int codigo { get; set; }
         public string titulo { get; set; }
         public int ano { get; set; }
+        public List<Participacao> p { get; set; }//colocar numa lista
 
         //Construtor
         public Filme(int codigo, string titulo, int ano)
@@ -19,6 +17,7 @@ namespace Holywood.dominio
             this.codigo = codigo;
             this.titulo = titulo;
             this.ano = ano;
+            p = new List<Participacao>();
         }
 
         //metodos
@@ -32,14 +31,23 @@ namespace Holywood.dominio
                 + ano
                 + "\n"
                 + "\tParticipações:\n";
+            //lendo a lista de participação
+            for (int i = 0; i < p.Count; i++)
+            {
+                s = s + "\t" + p[i] + "\n";
+            }
+            s = s + "\tCusto total do filme: " + CustoTotal().ToString("F2", CultureInfo.InvariantCulture);
             return s;
-
-
         }
 
-        public double Custo()
+        //metodo para calcular o Custo Total
+        public double CustoTotal()
         {
-            return 0;
+            double soma = 0.00;
+            for (int i = 0; i < p.Count; i++)
+            { soma = soma + p[i].Custo(); }
+
+            return soma;
         }
-    }
+    }//classe Pronta
 }

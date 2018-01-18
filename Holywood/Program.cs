@@ -19,7 +19,7 @@ namespace Holywood
             artista.Add(new Artista(102, "Chris Evans" , 2500000.00));
             artista.Add(new Artista(103, "Robert Downey Jr." , 3000000.00));
             artista.Add(new Artista(104, "Morgan Freeman" , 4000000.00));
-
+            artista.Sort();
             //loop principal do programa
             while (opcao != 5)
             {
@@ -34,7 +34,15 @@ namespace Holywood
                 Console.WriteLine();
 
                 Console.Write("\tPor favor Digite uma opção acima: ");
-                opcao = int.Parse(Console.ReadLine());
+                try
+                {
+                    opcao = int.Parse(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("\tErro Inesperado: " + e.Message);
+                    opcao = 0;
+                }
 
                 switch (opcao)
                 {
@@ -44,16 +52,37 @@ namespace Holywood
                         break;
 
                     case 2:
-                        Console.WriteLine();
-                        Tela.CadastrarArtistas();
-                        //parado aqui, solucionado, criar uma classe para tratar erros
+                        try
+                        {
+                            Console.WriteLine();
+                            Tela.CadastrarArtistas();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("\tErro Inesperado: " + e.Message);
+                        }
                         
                         break;
 
                     case 3:
+                        try
+                        {
+                            Console.WriteLine();
+                            Tela.CadastrarFilme();
+                        }
+                        catch(ModelException e)
+                        {
+                            Console.WriteLine("\tErro de negócio: " + e.Message);
+                        }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine("\tErro Inesperado: " + e.Message);
+                        }
+                        
                         break;
 
                     case 4:
+                        //criando a classe mostrarfilme
                         break;
 
                     case 5:
