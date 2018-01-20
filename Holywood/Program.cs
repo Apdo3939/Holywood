@@ -82,13 +82,31 @@ namespace Holywood
                         break;
 
                     case 4:
-                        //criando a classe mostrarfilme
+                        try
+                        {
+                            Console.WriteLine();
+                            Tela.MostrarFilme();
+                        }
+                        catch (ModelException e)
+                        {
+                            Console.WriteLine("\tErro de negócio: " + e.Message);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("\tErro Inesperado: " + e.Message);
+                        }
                         break;
 
                     case 5:
+                        Console.WriteLine();
+                        Console.WriteLine("\tObrigado por usar este programa... " );
+                        Console.WriteLine("\tAperte qualquer tecla para sair... ");
                         break;
 
                     default:
+                        Console.WriteLine();
+                        Console.WriteLine("\tOpção Invalida... ");
+                        Console.WriteLine("\tAperte qualquer tecla para nova opções... ");
                         break;
                 }
                 Console.ReadLine();

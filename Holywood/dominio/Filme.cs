@@ -23,7 +23,7 @@ namespace Holywood.dominio
         //metodos
         public override string ToString()
         {
-            string s = "\tFilme"
+            string s = "Filme: "
                 + codigo
                 + ", Título: "
                 + titulo
@@ -31,10 +31,11 @@ namespace Holywood.dominio
                 + ano
                 + "\n"
                 + "\tParticipações:\n";
+            
             //lendo a lista de participação
             for (int i = 0; i < p.Count; i++)
             {
-                s = s + "\t" + p[i] + "\n";
+                s = s  + p[i] + "\n";
             }
             s = s + "\tCusto total do filme: " + CustoTotal().ToString("F2", CultureInfo.InvariantCulture);
             return s;

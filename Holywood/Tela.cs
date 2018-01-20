@@ -63,26 +63,44 @@ namespace Holywood
                 Console.Write("\tArtista (código): ");
                 int artCod = int.Parse(Console.ReadLine());
 
-                //criando uma variavel para comparar entrada de usuário x lista
+                //criando uma variavel para comparar entrada de usuário x lista artistas
                 int pos = Program.artista.FindIndex(x => x.codigo == artCod);
-                //menos um retorna não achado o artcod digitado
+                //menos um retorna não achado o artcod digitado pelo usuário
                 if (pos == -1)
                 {
                     throw new ModelException("Código de artista não encontrado: " + artCod);
                 }
+                
                 //se artcod achado, continua o codigo
-
                 Console.Write("\tDesconto: ");
                 double desconto = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
                 Participacao part = new Participacao(desconto, Program.artista[pos], F);
                 F.p.Add(part);
                 }
+            //adicionado a lista de filmes
             Program.filmes.Add(F);
         }
         public static void MostrarFilme()//opção 4
         {
-
+            Console.Write("\tDigite o código do filme:  ");
+            int codigoFilme = int.Parse(Console.ReadLine());
+            
+            //criando uma variavel para comparar entrada de usuário x lista fimes
+            int pos = Program.filmes.FindIndex(x => x.codigo == codigoFilme);
+            
+            //menos um retorna não achado o codigofilme  digitado pelo usuário
+            if (pos == -1)
+            {
+                throw new ModelException("Código de filme não encontrado: " + codigoFilme);
+            }
+            
+            //se codigofilme achado, continua o codigo
+            for (int i = 0; i < Program.filmes.Count; i ++)
+            {
+                Console.WriteLine("\t" + Program.filmes[i]);
+            }
+            
         }
-        
+
     }
 }
